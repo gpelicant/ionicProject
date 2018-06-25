@@ -1,3 +1,20 @@
-page-home {
+.home {
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+    background: #fff;
+    color: color($colors, primary);
+}
 
+img{
+    background: #fff;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+}
+
+.input-name{
+    padding: 10px;
 }

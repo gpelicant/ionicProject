@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Quizz Project</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid *ngIf = "results">
+    <ion-row>
+      <ion-col width-50 offset-25>       
+        <h2 class="feedback">
+          Your results
+        </h2>
+        <h1>
+            You got {{correctTotal}} out of {{quizTotal}}!
+        </h1>
+        <p *ngIf="correctTotal === quizTotal">
+          You won the quizz !
+        </p>
+        <p *ngIf="correctTotal/quizTotal >= .75">
+          You did it but you need more train
+        </p>
+        <p *ngIf="correctTotal/quizTotal < .75">
+          let's do this ! Try again !
+        </p>
+        <ion-list>
+          <ion-item *ngFor="let result of results">
+            the answer was: {{result.correctAnswer}}
+            
+            Your answer: {{result.yourAnswer}}
+          </ion-item>  
+        </ion-list>
+        <div class="center">
+          <button ion-button (click)="backHome()">Back to home</button>
+        </div>
+        <div class="center">
+          <button ion-button (click)="restart()">Play the same quizzes again</button>
+        </div>  
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
